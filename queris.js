@@ -405,7 +405,7 @@ db.zenclass.aggregate([
     {$group: {_id: "$mentors", count: {$sum: 1}}},
     {$match: {_id: {$ne: null}, count: {$gt: 15}}}
 ]);
-db.zenclass.find({mentors: "Raghav"},{user: 1, mentors: 1});
+db.zenclass.find({mentors: "Manikandan"},{user: 1, mentors: 1});
 
 // Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
 db.zenclass.find({$or: [{attendance: "Absent"}, {task_date: {$not: {$gte: new Date("<2020-10-15>"), $lte: new Date("<2020-10-31>")}}}]});
